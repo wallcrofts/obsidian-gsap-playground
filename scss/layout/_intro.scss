@@ -1,0 +1,20 @@
+// Global styling for 'intro' section
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    opacity: 0;
+}
+.hero_slider-wrapper, .hero_slider-overlay, .slider-content {
+    @include fullWidth();
+}
+
+// Styling for .hero_slider-overlay and individual borders
+@import "../modules/intro/border-overlay";
+// Styling for .hero_nav-wrapper and .hero_social-icons
+@import "../modules/intro/main-nav";
+
+
+@import "../modules/intro/hero-slider";
+@import "../modules/intro/slide-content";

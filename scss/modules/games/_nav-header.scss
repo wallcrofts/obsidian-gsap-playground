@@ -1,0 +1,72 @@
+.cards-header {
+  //padding: 3em 12.5em 0;
+  display: inline-block;
+}
+
+
+.game-cards_heading {
+  position: relative;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 1em 0;
+  .heading_subtitle {
+    color: $font-grey-light;
+    position: relative;
+    top: -.5em;
+    font-weight: 300;
+    margin-right: .25em;
+    font-size: 1.4em;
+    border-bottom: 5px solid $font-light-alt;
+  }
+  .heading_title {
+    color: $font-grey-dark;
+    font-size: 2.5em;
+    font-weight: 800;
+    display: inline;
+  }
+}
+
+.game-cards_description {
+  width: 100%;
+  line-height: 1.75;
+}
+
+
+.game-cards_nav-buttons {
+  position: relative;
+  //left: 25%;
+  height: 5em;
+  width: 7.5em;
+}
+
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev, .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  background-image: none !important; // overrides default button styling from 'swiper.css'
+}
+//.swiper-button-next, .swiper-button-prev { width: 35px; }
+
+
+
+
+@media only screen and (min-width: 320px) {
+  .sl-nav {
+    display: none;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+
+}
+@media only screen and (min-width: 1024px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+  }
+
+  .sl-nav {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,800&display=swap');
+
+@import url("scss/dependencies/normalize.css/normalize.css");
+@import url("scss/dependencies/fontawesome/css/all.css");
+
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+
+@import "scss/global";
+
+@import "scss/layout/intro";
+@import "scss/layout/games";
+@import "scss/layout/explore";
+@import "scss/layout/footer";
+
+.cover_outer-worlds {
+    background-image: url("img/game-cards/cards/outerworlds-hero.jpg");
+  }
+  .cover_pillars-of-eternity-deadfire {
+    background-image: url("img/game-cards/cards/poed-hero.jpg");
+  }
+  .cover_tyranny {
+    background-image: url("img/game-cards/cards/tyranny-hero.jpg");
+  }
+  .cover_pillars-of-eternity {
+    background-image: url("img/game-cards/cards/poe-hero.jpg");
+  }

@@ -1,0 +1,70 @@
+.explore_jobs-container {
+    width: 50%;
+    position: sticky;
+    top: 0;
+    height: 100%;
+    margin: 0 3em;
+}
+
+
+.explore_jobs-heading {
+    position: relative;
+    
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    //margin: 1em;
+  margin: 4.75em 0 2em;
+
+    .jobs-heading_subtitle {
+      color: $font-grey-light;
+      position: relative;
+      top: -.5em;
+      font-weight: 300;
+      margin-right: .25em;
+      font-size: 1.4em;
+      border-bottom: 5px solid $font-light-alt;
+    }
+    .jobs-heading_title {
+      color: $font-grey-dark;
+      font-size: 2.5em;
+      font-weight: 800;
+      display: inline;
+    }
+  
+    
+  
+  
+  }
+
+
+
+
+
+.job-listing-container {
+    display: flex;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.082);
+    .job-title {
+    
+        font-weight: 500;
+        line-height: 1.25em;
+        color: $font-light-alt;
+        width: 30%;
+        margin-top: 1em;
+        text-decoration: none;
+        //text-shadow: 2px 2px 3px rgba(182, 182, 182, 0.808);
+        transition: all .2s;
+        &:hover {
+            color: $font-light;
+        }
+    }
+    .job-description {
+        font-size: .9em;
+        font-weight: 400;
+        line-height: 1.5em;
+        margin-left: 2em;
+        letter-spacing: .5px;
+        flex: 1;
+    }
+}
+

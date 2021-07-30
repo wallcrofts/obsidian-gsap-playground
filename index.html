@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Jacek Matuszyk">
+  <meta name="description" content="A proposed redesign concept for Obsidian Entertainment website.">
+  <meta property="og:description" content="A proposed redesign concept for Obsidian Entertainment website.">
+  <title>Obsidian Entertainment</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script src="https://alexandrebuffet.fr/codepen/slider/slick-animation.min.js"></script>
+  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/swiper.min.css">
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/swiper.jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <!-- 
+  <link rel="stylesheet" href="node_modules/fontawesome/css/all.css">
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css"> 
+  -->
+</head>
+<body>
+  <!-- Intro section with full screen news slider, main navigation and page borders appearing on page load -->
+  <section class="hero-wrapper" id="section-anchor_home">
+    <!-- Website navigation, user links and logo (top content) -->
+    <div class="hero_nav-wrapper">
+      <div class="hero_nav-container">
+        <img class="hero_nav-logo" src="img/obsidian-logo-alt.png" alt="Obsidian Entertainment logo">
+        <nav class="hero_nav-main">
+          <ul class="nav-main">
+            <li><a href="#section-anchor_home">Home</a></li>
+            <li><a href="#section-anchor_news">News</a></li>
+            <li><a href="#section-anchor_games">Games</a></li>
+            <li><a href="#section-anchor_contact">Contact</a></li>
+            <li class="dropdown-container">
+              <a href="#" class="dropdown-anchor">Community</a>
+              <ol class="dropdown">
+                <li><a href="https://support.obsidian.net">Support</a></li>
+                <li><a href="https://forums.obsidian.net/blogs/">Blog</a></li>
+                <li><a href="https://forums.obsidian.net">Forum</a></li>
+              </ol>
+            </li>
+          </ul>
+          <div class="nav-user">
+            <span>
+              <i class="fas fa-sign-in-alt"></i>
+              <a href="https://id.obsidian.net/login?returnTo=https%3A%2F%2Fouterworlds.obsidian.net%2Fen" class="user-link">Sign In</a>
+              <span class="divider-skew"></span>
+              <a href="https://id.obsidian.net/register?returnTo=https%3A%2F%2Fouterworlds.obsidian.net%2Fen" class="user-link">Register</a>
+            </span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Social links (left side content) -->
+    <div class="hero_social-icons">
+      <ul>
+        <li><a href="https://www.facebook.com/obsidian"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://twitter.com/obsidian"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/obsidian/"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>       
+    <!-- Website intro slider, main news -->
+    <div class="hero_slider-wrapper">
+      <!-- Animated borders on page load -->
+      <div class="hero_slider-overlay">
+        <div class="overlay_border overlay_border-top"></div>
+        <div class="overlay_border overlay_border-right"></div>
+        <div class="overlay_border overlay_border-bottom"></div>
+        <div class="overlay_border overlay_border-left"></div>
+      </div>
+      <!-- Intro news slider container -->
+      <div class="hero_slider-main simple-dots">
+        <!-- Intro news slides -->
+
+
+        <!-- Intro slide news 1 - Grounded announcement-->
+        <div class="hero-slide_wrapper">
+          <!-- Full screen background video container -->
+          <div class="slide-background">
+            <div class="background-overlay"></div> <!-- Darken overlay for background video-->
+            <!-- Background video -->
+            <video autoplay loop muted class="background-video"><source src="video/grounded-trailer.mp4"></video>
+          </div>
+
+
+          <!-- Full screen overlay containing the trailer, triggered by "trailer-button" -->
+          <div id="overlay">
+            <a href="#" class="close">&times;</a>
+
+            <div style="height:20%"></div>
+
+            <iframe width="853" height="505" src="https://www.youtube.com/embed/X4B5iOh1mB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe> <!-- ; picture-in-picture -->
+          </div>
+        
+          <!-- Slider content - heading, description and 'more' buttons --> 
+          <div class="hero-slide_content" data-animation-in="fadeIn" data-delay-in="0.1">
+            <div class="hero-news_wrapper">
+              <h2 class="hero-news_heading">We are very excited to announce <span class="heading-highlight">Grounded!</span></h2>
+              <p class="hero-news_description">The world is a vast, beautiful, and dangerous place, especially when you have been shrunken to the size of an ant. Explore, build, and survive together in this first person, multiplayer, survival-adventure. Can you thrive alongside the hordes of giant insects, fighting to endure the hardships of the backyard?</p>
+              <p class="hero-news_description">Grounded will be available Spring 2020 for Xbox One digitally through Xbox Game Preview and with Xbox Game Pass, the Microsoft Store, and on Steam.</p>
+              <div class="hero-news_buttons">
+                <button class="trailer-button"><a href="#overlay">Trailer</a></button>
+                <button><a href="https://versusevil.com/pillars-of-eternity-en/poe2-console-release-date/">Learn More</a></button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Intro slide news 2 - When Can You Play The Outer Worlds-->
+        <div class="hero-slide_wrapper">
+          <!-- Full screen background video container -->
+          <div class="slide-background">
+            <div class="background-overlay"></div> <!-- Darken overlay for background video-->
+            <!-- Background video -->
+            <video autoplay loop muted class="background-video"><source src="video/outerworlds-preview.mp4"></video>
+          </div>
+
+
+          <!-- Full screen overlay containing the trailer, triggered by "trailer-button" -->
+          <div id="overlay">
+            <a href="#" class="close">&times;</a>
+
+            <div style="height:20%"></div>
+
+            <iframe width="853" height="505" src="https://www.youtube.com/watch?v=mFJXWQy3Id8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe> <!-- ; picture-in-picture -->
+          </div>
+        
+          <!-- Slider content - heading, description and 'more' buttons --> 
+          <div class="hero-slide_content" data-animation-in="fadeIn" data-delay-in="0.1">
+            <div class="hero-news_wrapper">
+              <h2 class="hero-news_heading">When Can You Play <span class="heading-highlight">The Outer Worlds</span></h2>
+              <p class="hero-news_description">Looking to find out exactly when you can start exploring the Halcyon colony? We have the information on our forums.</p>
+              <div class="hero-news_buttons">
+                <button><a href="https://forums.obsidian.net/topic/110544-when-can-you-play-the-outer-worlds/">Learn More</a></button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section>
+  <!-- "Explore" section with news module and sticky aside module with job listings -->
+  <section class="exlore-wrapper" id="section-anchor_news">
+    <!-- First container, news-->
+    <div class="explore_news-container">
+      <!-- News heading -->
+      <div class="explore_news-heading">
+        <span class="news-heading_subtitle">Latest</span>
+        <h2 class="news-heading_title">News</h2>
+      </div>
+      <!-- POE Complete Edition announcement -->
+      <div class="article-line"></div>
+      <article class="explore_news-article">
+        <div class="news-article_image-container">
+          <img src="img/news-thumbs/poe-news.jpg">
+        </div>
+        <div class="news-article_text-container">
+          <span class="news-article_type">Pillars of Eternity</span>
+          <span class="news-article_date"> / December 4th, 2019</span>
+          <h3 class="news-article_heading">Pillars of Eternity: Complete Edition Available Now on the Nintendo Switch!</h3>
+          <p class="news-article_paragraph">Greetings, Watchers! We are excited to announce that Pillars of Eternity II: Deadfire - Ultimate Edition will be coming to Xbox One and PS4 on January 28, 2020!</p>
+          <a class="news-article_link" href="">Read More</a>
+        </div>
+      </article>
+      <!-- Outer Worlds nominated -->
+      <div class="article-line"></div>
+      <article class="explore_news-article">
+        <div class="news-article_image-container">
+          <img src="img/news-thumbs/tow-news.jpg">
+        </div>
+        <div class="news-article_text-container">
+          <span class="news-article_type">The Outer Worlds</span>
+          <span class="news-article_date"> / November 19, 2019</span>
+          <h3 class="news-article_heading">The Outer Worlds has been nominated for FOUR Game Awards!</h3>
+          <p class="news-article_paragraph">We are so honored to see that we have been nominated for FOUR Video Game Awards!</p>
+          <a class="news-article_link" href="">Read More</a>
+        </div>
+      </article>
+      <!-- Grounded announcement-->
+      <div class="article-line"></div>
+      <article class="explore_news-article">
+        <div class="news-article_image-container">
+            <img src="img/news-thumbs/grounded-news.png">
+        </div>
+        <div class="news-article_text-container">
+          <span class="news-article_type">Grounded</span>
+          <span class="news-article_date"> / November 14, 2019</span>
+          <h3 class="news-article_heading">Announcing Grounded!</h3>
+          <p class="news-article_paragraph">We are very excited to announce our first game as an Xbox Game Studio! A survival adventure game with a small twist: Grounded!</p>
+          <a class="news-article_link" href="">Read More</a>
+        </div>
+      </article>
+      <!-- When can you play Outer Worlds -->
+      <div class="article-line"></div>
+      <article class="explore_news-article">
+        <div class="news-article_image-container">
+          <img src="img/news-thumbs/tow-news.jpg">
+        </div>
+        <div class="news-article_text-container">
+          <span class="news-article_type">The Outer Worlds</span>
+          <span class="news-article_date"> / October 16, 2019</span>
+          <h3 class="news-article_heading">When can you play The Outer Worlds?</h3>
+          <p class="news-article_paragraph">Looking to find out exactly when you can start exploring the Halcyon colony? We have the information on our forums.</p>
+          <a class="news-article_link" href="">Read More</a>
+        </div>
+      </article>
+      <a class="explore_view-more-link" href="http://">
+        <span class="view-more-link_subtitle">View More</span>
+        <span class="view-more-link_title">News</span>
+      </a>
+    </div>
+    <!-- Second, sticky, container, jobs-->
+    <aside class="explore_jobs-container">
+      <div class="explore_jobs-heading">
+          <span class="jobs-heading_subtitle">Latest</span>
+          <h2 class="jobs-heading_title">Job Listings</h2>
+      </div>
+      <div class="job-listing-container">
+        <a class="job-title" href="https://www.obsidian.net/jobs/open-positions/art/1140-senior-technical-artist-houdini">Senior Technical Artist - Houdini</a>
+        <p class="job-description">Obsidian Entertainment is looking for an experienced and talented Houdini Technical Artist, to join our growing team of RPG developers.</p>
+      </div>
+      <div class="job-listing-container">
+        <a class="job-title" href="https://www.obsidian.net/jobs/open-positions/art/1139-animation-director">Animation Director</a>
+        <p class="job-description">Obsidian Entertainment is looking for an experienced, highly skilled, and organized Animation Director to join our growing team of talented RPG developers. </p>
+      </div>
+      <div class="job-listing-container">
+        <a class="job-title" href="https://www.obsidian.net/jobs/open-positions/design/1138-combat-designer/">Combat Systems Designer</a>
+        <p class="job-description">Obsidian Entertainment is looking for a Combat Systems Designer with proven experience developing first-person melee combat gameplay to join our team of talented developers.</p>
+      </div>
+      <div class="job-listing-container">
+        <a class="job-title" href="https://www.obsidian.net/jobs/open-positions/art/1137-ui-artist">UI Artist</a>
+        <p class="job-description">Obsidian Entertainment is looking for a UI Artist to collaborate in the design and creation of the user experience for our next great RPG.</p>
+      </div>
+      <a class="explore_view-more-link" href="https://www.obsidian.net/jobs/">
+        <span class="view-more-link_subtitle">View More</span>
+        <span class="view-more-link_title">Open Positions</span>
+      </a>
+    </aside>
+  </section>
+  <!-- Section with swipeable game cards gallery -->
+  <!-- Basic functionality only -->
+  <section class="games-wrapper" id="section-anchor_games"> 
+    <div class="games-container">
+      <div class="cards-header">
+        <div class="game-cards_heading">
+          <span class="heading_subtitle">Welcome to</span>
+          <h2 class="heading_title">the Adventure</h2>
+        </div>
+        <div class="game-cards_introduction">
+          <p class="game-cards_description">Obsidian creates games focused on rich stories, unforgettable characters and vast worlds</p>
+          <p class="game-cards_description">Explore vast ruins, battle deadly enemies, and claim otherworldly artifacts. Fight the dangers of an ever-changing world. Rise united to defeat evil.</p>
+        </div>
+
+        <div class="game-cards_nav-buttons">
+              <div class="swiper-button-next">
+                <svg id="nextBtn" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+                  <path d="M32.5 0A32.5 32.5 0 1 0 65 32.5 32.5 32.5 0 0 0 32.5 0zm0 62A29.5 29.5 0 1 1 62 32.5 29.53 29.53 0 0 1 32.5 62zm-5.22-40.28L38.06 32.5 27.28 43.28l2.12 2.12 12.9-12.9-12.9-12.9z"/>
+                </svg>
+              </div>
+            
+              <div class="swiper-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" id="prevBtn" data-name="Layer 1" viewBox="0 0 65 65">
+                  <path d="M0 32.5A32.5 32.5 0 1 0 32.5 0 32.5 32.5 0 0 0 0 32.5zm3 0A29.5 29.5 0 1 1 32.5 62 29.53 29.53 0 0 1 3 32.5zm32.6-12.9L22.7 32.5l12.9 12.9 2.12-2.12L26.94 32.5l10.78-10.78z"/>
+                </svg>
+              </div>
+        </div>
+
+      </div>
+      <div class="game-cards_content-wrapper">
+      <div class="game-cards_swiper-container">
+          <div class="swiper-wrapper">
+          <!-- First game card, The Outer Worlds -->
+          <div class="swiper-slide sl--slide">
+            <div class="slide-cover"></div>
+              <div class="sl-card-wrapper">
+                  <div class="card_bottom-gradient"></div>
+                  <div class="card_cover cover_outer-worlds"></div>
+                  <div class="sl--content-wrapper sl--content-wrapper-inactive">
+                    <img src="img/game-cards/logos/outerworlds-logo.png" class="card-logo">
+                  </div>
+            </div>
+          </div>
+          <!-- Second game card, Pillars of Eternity 2: Deadfire -->
+          <div class="swiper-slide sl--slide">
+            <div class="slide-cover"></div>
+              <div class="sl-card-wrapper">
+                  <div class="card_bottom-gradient"></div>
+                  <div class="card_cover cover_pillars-of-eternity-deadfire"></div>
+                  <div class="sl--content-wrapper sl--content-wrapper-inactive">
+                    <img src="img/game-cards/logos/poed-logo.png" class="card-logo">
+
+                  </div>
+            </div>
+          </div>
+          <!-- Third game card, Tyranny -->
+          <div class="swiper-slide sl--slide">
+            <div class="slide-cover"></div>
+              <div class="sl-card-wrapper">
+                  <div class="card_bottom-gradient"></div>
+                  <div class="card_cover cover_tyranny"></div>
+                  <div class="sl--content-wrapper sl--content-wrapper-inactive">
+                    <img src="img/game-cards//logos/tyranny-logo.png" class="card-logo">
+
+                  </div>
+            </div>
+          </div>
+          <!-- Fourth game card, Pillars of Eternity -->
+          <div class="swiper-slide sl--slide">
+            <div class="slide-cover"></div>
+              <div class="sl-card-wrapper">
+                <div class="card_bottom-gradient"></div>
+                <div class="card_cover cover_pillars-of-eternity"></div>
+                <div class="sl--content-wrapper sl--content-wrapper-inactive">
+                  <img src="img/game-cards/logos/poe-logo.png" class="card-logo">
+                </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Footer section with contact form, twitter feed and copyrights  -->
+  <footer class="footer-wrapper" id="section-anchor_contact">
+    <!-- First container, contact form and Twitter feed-->
+    <div class="footer_contact-wrapper">
+      <!-- Contact form-->
+      <item class="contact-container">
+        <h3 class="footer-element-heading">Contact with us</h3>
+        <form class="contact-form row">
+          <div class="form-field form-column mid-width name-input">
+            <input id="name" class="input-text js-input w-normal" type="text" required>
+            <label class="label name-mail-label" for="name">Enter your name</label>
+          </div>
+          <div class="form-field form-column mid-width mail-input">
+            <input id="email" class="input-text js-input w-normal" type="email" required>
+            <label class="label name-mail-label" for="email">Enter your email</label>
+          </div>
+          <div class="form-field form-column full-width">
+            <input id="message" class="input-text js-input w-higher" type="text" required>
+            <label class="label message-label" for="message">Message</label>
+          </div>
+          <div class="form-field form-column full-width">
+            <input class="form-send-btn" type="submit" value="Send">
+          </div>
+        </form>
+      </item>
+      <!-- Twitter feed container-->
+      <item class="twitter-container">
+        <h3 class="footer-element-heading">On Twitter</h3>
+        <div class="footer_twitter-feed"> 
+          <a class="twitter-timeline" data-lang="en" data-width="550" data-height="400" data-theme="light" href="https://twitter.com/Obsidian?ref_src=twsrc%5Etfw" data-chrome="nofooter transparent noheader noscrollbar noborders">Tweets by Obsidian</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </item>
+    </div>
+    <!-- Second container, copyrights and logos-->
+    <div class="footer_bottom-wrapper">
+      <!-- Footer social icons-->
+      <ul class="bottom_social-icons">
+        <li><a href="https://www.facebook.com/obsidian"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://twitter.com/obsidian"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/obsidian/"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <!-- Legal notes, privacy policy and terms of use -->
+      <ul class="bottom_legal-notes">
+        <li><a href="https://www.obsidian.net/legal">Legal Notes</a></li>
+        <li><a href="https://www.obsidian.net/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://www.obsidian.net/terms-of-use">Terms of Use</a></li>
+      </ul>
+      <!-- Logos -->
+      <ul class="bottom_logos">
+          <img src="img/footer-logos/amd-logo.png" class="amd-footer-logo footer-logo" alt="amd-footer-logo">
+          <img src="img/footer-logos/obsidian-footer-logo.png" class="obsidian-footer-logo footer-logo" alt="obsidian-footer-logo">
+          <img src="img/footer-logos/xbox-game-studios-logo.png" class="xbox-game-studios-logo footer-logo" alt="xbox-game-studios-logo">
+      </ul>
+      <!-- Copyrights -->
+      <div class="bottom_copyrights">
+        <span>© 2019 Obsidian Entertainment, Inc. Obsidian Entertainment and the Obsidian Entertainment logo are trademarks or registered trademarks of Obsidian Entertainment, Inc.</span>
+        <span>© 2019 Advanced Micro Devices, Inc. All rights reserved. AMD, the AMD Arrow logo, Radeon, Ryzen and combinations thereof are trademarks of Advanced Micro Devices, Inc.</span>
+        <span>©2019 Microsoft ALL RIGHTS RESERVED</span>   
+      </div>
+    </div>
+  </footer>
+  <script src="js/page-load.js"></script> <!-- For intro section, loads borders, intro slider, left and top side contents -->
+  <script src="js/nav-scrolled.js"></script> <!-- Adds background to navbar on scroll -->
+  <script src="js/intro-slider.js"></script> <!-- Scripting for intro news slider -->
+  <script src="js/games-swiper.js"></script> <!-- Scripting for game cards slider -->
+  <!-- <script src="js/contact-form.js"></script> WIP  -->   
+</body>
+</html>
