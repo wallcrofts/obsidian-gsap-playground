@@ -8,7 +8,12 @@
   <meta name="description" content="A proposed redesign concept for Obsidian Entertainment website.">
   <meta property="og:description" content="A proposed redesign concept for Obsidian Entertainment website.">
   <title>Obsidian Entertainment</title>
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
@@ -19,15 +24,10 @@
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/swiper.jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
   <link rel="icon" href="favicon.png" type="image/x-icon">
-  <!-- 
-  <link rel="stylesheet" href="node_modules/fontawesome/css/all.css">
-  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css"> 
-  -->
 </head>
 <body>
-  <!-- Intro section with full screen news slider, main navigation and page borders appearing on page load -->
   <section class="hero-wrapper" id="section-anchor_home">
-    <!-- Website navigation, user links and logo (top content) -->
+
     <div class="hero_nav-wrapper">
       <div class="hero_nav-container">
         <img class="hero_nav-logo" src="img/obsidian-logo-alt.png" alt="Obsidian Entertainment logo">
@@ -57,7 +57,7 @@
         </nav>
       </div>
     </div>
-    <!-- Social links (left side content) -->
+
     <div class="hero_social-icons">
       <ul>
         <li><a href="https://www.facebook.com/obsidian"><i class="fab fa-facebook-f"></i></a></li>
@@ -65,31 +65,26 @@
         <li><a href="https://www.instagram.com/obsidian/"><i class="fab fa-instagram"></i></a></li>
       </ul>
     </div>       
-    <!-- Website intro slider, main news -->
+
     <div class="hero_slider-wrapper">
-      <!-- Animated borders on page load -->
+
       <div class="hero_slider-overlay">
         <div class="overlay_border overlay_border-top"></div>
         <div class="overlay_border overlay_border-right"></div>
         <div class="overlay_border overlay_border-bottom"></div>
         <div class="overlay_border overlay_border-left"></div>
       </div>
-      <!-- Intro news slider container -->
+
       <div class="hero_slider-main simple-dots">
-        <!-- Intro news slides -->
 
-
-        <!-- Intro slide news 1 - Grounded announcement-->
         <div class="hero-slide_wrapper">
-          <!-- Full screen background video container -->
+
           <div class="slide-background">
-            <div class="background-overlay"></div> <!-- Darken overlay for background video-->
-            <!-- Background video -->
+            <div class="background-overlay"></div>
+
             <video autoplay loop muted class="background-video"><source src="video/grounded-trailer.mp4"></video>
           </div>
 
-
-          <!-- Full screen overlay containing the trailer, triggered by "trailer-button" -->
           <div id="overlay">
             <a href="#" class="close">&times;</a>
 
@@ -98,7 +93,6 @@
             <iframe width="853" height="505" src="https://www.youtube.com/embed/X4B5iOh1mB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe> <!-- ; picture-in-picture -->
           </div>
         
-          <!-- Slider content - heading, description and 'more' buttons --> 
           <div class="hero-slide_content" data-animation-in="fadeIn" data-delay-in="0.1">
             <div class="hero-news_wrapper">
               <h2 class="hero-news_heading">We are very excited to announce <span class="heading-highlight">Grounded!</span></h2>
@@ -110,25 +104,14 @@
               </div>
             </div>
           </div>
-
-
         </div>
-
-
-
-
-
-        <!-- Intro slide news 2 - When Can You Play The Outer Worlds-->
         <div class="hero-slide_wrapper">
-          <!-- Full screen background video container -->
+
           <div class="slide-background">
-            <div class="background-overlay"></div> <!-- Darken overlay for background video-->
-            <!-- Background video -->
+            <div class="background-overlay"></div>
             <video autoplay loop muted class="background-video"><source src="video/outerworlds-preview.mp4"></video>
           </div>
 
-
-          <!-- Full screen overlay containing the trailer, triggered by "trailer-button" -->
           <div id="overlay">
             <a href="#" class="close">&times;</a>
 
@@ -136,8 +119,7 @@
 
             <iframe width="853" height="505" src="https://www.youtube.com/watch?v=mFJXWQy3Id8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe> <!-- ; picture-in-picture -->
           </div>
-        
-          <!-- Slider content - heading, description and 'more' buttons --> 
+
           <div class="hero-slide_content" data-animation-in="fadeIn" data-delay-in="0.1">
             <div class="hero-news_wrapper">
               <h2 class="hero-news_heading">When Can You Play <span class="heading-highlight">The Outer Worlds</span></h2>
@@ -151,21 +133,15 @@
 
         </div>
 
-        
-
       </div>
     </div>
   </section>
-  <!-- "Explore" section with news module and sticky aside module with job listings -->
   <section class="exlore-wrapper" id="section-anchor_news">
-    <!-- First container, news-->
     <div class="explore_news-container">
-      <!-- News heading -->
       <div class="explore_news-heading">
         <span class="news-heading_subtitle">Latest</span>
         <h2 class="news-heading_title">News</h2>
       </div>
-      <!-- POE Complete Edition announcement -->
       <div class="article-line"></div>
       <article class="explore_news-article">
         <div class="news-article_image-container">
@@ -179,7 +155,6 @@
           <a class="news-article_link" href="">Read More</a>
         </div>
       </article>
-      <!-- Outer Worlds nominated -->
       <div class="article-line"></div>
       <article class="explore_news-article">
         <div class="news-article_image-container">
@@ -193,7 +168,6 @@
           <a class="news-article_link" href="">Read More</a>
         </div>
       </article>
-      <!-- Grounded announcement-->
       <div class="article-line"></div>
       <article class="explore_news-article">
         <div class="news-article_image-container">
@@ -207,7 +181,6 @@
           <a class="news-article_link" href="">Read More</a>
         </div>
       </article>
-      <!-- When can you play Outer Worlds -->
       <div class="article-line"></div>
       <article class="explore_news-article">
         <div class="news-article_image-container">
@@ -254,8 +227,6 @@
       </a>
     </aside>
   </section>
-  <!-- Section with swipeable game cards gallery -->
-  <!-- Basic functionality only -->
   <section class="games-wrapper" id="section-anchor_games"> 
     <div class="games-container">
       <div class="cards-header">
@@ -336,7 +307,6 @@
       </div>
     </div>
   </section>
-  <!-- Footer section with contact form, twitter feed and copyrights  -->
   <footer class="footer-wrapper" id="section-anchor_contact">
     <!-- First container, contact form and Twitter feed-->
     <div class="footer_contact-wrapper">
@@ -397,10 +367,10 @@
       </div>
     </div>
   </footer>
-  <script src="js/page-load.js"></script> <!-- For intro section, loads borders, intro slider, left and top side contents -->
-  <script src="js/nav-scrolled.js"></script> <!-- Adds background to navbar on scroll -->
-  <script src="js/intro-slider.js"></script> <!-- Scripting for intro news slider -->
-  <script src="js/games-swiper.js"></script> <!-- Scripting for game cards slider -->
+  <script src="js/page-load.js"></script>
+  <script src="js/nav-scrolled.js"></script>
+  <script src="js/intro-slider.js"></script>
+  <script src="js/games-swiper.js"></script>
   <!-- <script src="js/contact-form.js"></script> WIP  -->   
 </body>
 </html>

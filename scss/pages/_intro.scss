@@ -1,0 +1,523 @@
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    opacity: 0;
+}
+.hero_slider-wrapper, .hero_slider-overlay, .slider-content {
+    @include fullWidth();
+}
+
+.overlay_border {
+    z-index: 1;
+    position: absolute;
+    background-color: $bg-main;
+  
+    &.overlay_border-top {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      transform-origin: top center;
+    }
+    &.overlay_border-right {
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      transform-origin: center right;
+    }
+    &.overlay_border-bottom {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      transform-origin: bottom center;
+    }
+    &.overlay_border-left {
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      transform-origin: center left;
+    }
+  }
+  .hero_nav-wrapper  {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1.75em;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1em 0;
+    z-index: 1;
+  }
+  // Class added to nav wrapper on scroll
+  .hero_nav-wrapper-scrolled {
+    background-color: #1a1a1a;
+    transition: .2s ease-in-out;
+    z-index: 99;
+    .hero_nav-logo {
+      filter: invert(100%);
+    }
+    .hero_nav-main ul li a {
+      color: $bg-main;
+    }
+    .dropdown {
+      background-color: #1a1a1a !important;
+    }
+    .divider-skew {
+      background-color: $bg-main !important;
+    }
+    .nav-user, .user-link, .fas {
+      color: $bg-main !important;
+    }
+  }
+  
+  .hero_nav-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .hero_nav-logo, .hero_nav-main, .nav-user {
+    opacity: 0;
+    transition: color 0.3s;
+  }
+  
+
+  .hero_nav-logo {
+    position: absolute;
+    left: -2.5em;
+    top: -0.25em;
+    width: 10em;
+    display: inline-block;
+  }
+  .hero_nav-main {
+    position: absolute;
+    right: 0;
+    top: -1em;
+    display: inline;
+    font-weight: 500;
+    ul {
+      display: inline-block;
+    }
+    ul li {
+      display: inline;
+      padding: 0 0.5em;
+    }
+    ul li a {
+      text-decoration: none;
+      color: $font-dark;
+      font-size: 0.9rem;
+      padding: 0 0.25em;
+      letter-spacing: .5px;
+      @include textUnderline();
+    }
+    .dropdown-container {
+      position: relative;
+      margin: 0 2em;
+      .dropdown-anchor {
+        background: none;
+      }
+      &:hover .dropdown {
+        visibility: visible;
+      }
+      .dropdown {
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        padding: 0 1.5em;
+        background-color: $bg-main;
+        li a {
+          display: block;
+        }
+      }
+    }
+    .nav-user {
+      opacity: 0;
+      display: inline;
+      padding: 0 1.5em;
+      .user-link {
+        text-decoration: none;
+        color: $font-dark;
+        font-weight: 500;
+        font-weight: 0.8em;
+        letter-spacing: 1px;
+        @include textUnderline();
+      }
+      .divider-skew {
+        display: inline-block;
+        width: 1px;
+        height: 14px;
+        margin: 0 0.8em;
+        background-color: $font-dark;
+        transform: rotate(25deg);
+      }
+      .fas {
+        margin: 0 .75em;
+      }
+    }
+  }
+  
+  // Left side content, social icons
+  .hero_social-icons {
+    opacity: 0;
+    position: absolute;
+    bottom: 20%;
+    left: -1em;
+    z-index: 1;
+    font-size: 1.2em;
+    line-height: 2;
+    letter-spacing: 1px;
+    ul {
+      list-style: none;
+    }
+    ul li a {
+      text-decoration: none;
+      color: $font-dark;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      &:hover {
+        color: $font-light;
+        transition: color 0.3s;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -70px;
+      left: 47px;
+      width: 1px;
+      height: 80px;
+      background-color: $font-dark;
+      opacity: 0.2;
+    }
+  }
+  
+  
+  
+  // Media queries
+  @media (max-width: 1170px) {
+  
+  }
+
+
+  .hero_slider-main {
+    z-index: 0;
+  }
+  .hero_slider-wrapper {
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  
+  .slider [data-animation-in] {
+    opacity: 0;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    transition: opacity 0.5s ease 0.3s;
+  }
+  
+  .slick-dotted .slick-slider {
+    margin-bottom: 30px;
+  }
+  
+  
+  .stick-dots {
+    z-index: 0;
+  }
+  
+  .slick-dots {
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    list-style: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+      position: relative;
+      display: inline-block;
+      margin: 0 5px;
+      padding: 0;
+      cursor: pointer;
+    }
+    li button {
+      border: 0;
+      display: block;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+  
+    .slick-dots li button:hover,
+    .slick-dots li button:focus {
+      outline: none;
+    }
+  
+  }
+  .simple-dots .slick-dots li {
+    width: 20px;
+    height: 20px;
+    button {
+      border-radius: 50%;
+      background-color: $bg-main;
+      opacity: 0.25;
+  
+      width: 12.5px;
+      height: 12.5px;
+      
+    }
+    button:hover,
+    button:focus {
+  
+      width: 14px;
+      height: 14px;
+  
+      opacity: 1;
+    }
+    .slick-active button {
+      
+      opacity: 1;
+    }
+  }
+  
+  .stick-dots .slick-dots li {
+    height: 3px;
+    width: 50px;
+  }
+  .stick-dots .slick-dots li button {
+    position: relative;
+    background-color: $bg-main;
+    opacity: 0.25;
+    width: 50px;
+    height: 3px;
+    padding: 0;
+  }
+  .stick-dots .slick-dots li button:hover,
+  .stick-dots .slick-dots li button:focus {
+    opacity: 1;
+  }
+  .stick-dots .slick-dots li.slick-active button {
+    color: $bg-main;
+    opacity: 0.75;
+  }
+  .stick-dots .slick-dots li.slick-active button:hover,
+  .stick-dots .slick-dots li.slick-active button:focus {
+    opacity: 1;
+  }
+  
+  
+  @-webkit-keyframes zoomInImage {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    to {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+              transform: scale3d(1.1, 1.1, 1.1);
+    }
+  }
+  @keyframes zoomInImage {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    to {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+              transform: scale3d(1.1, 1.1, 1.1);
+    }
+  }
+  .zoomInImage {
+    -webkit-animation-name: zoomInImage;
+            animation-name: zoomInImage;
+  }
+  @-webkit-keyframes zoomOutImage {
+    from {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+              transform: scale3d(1.1, 1.1, 1.1);
+    }
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes zoomOutImage {
+    from {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+              transform: scale3d(1.1, 1.1, 1.1);
+    }
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }
+  .zoomOutImage {
+    -webkit-animation-name: zoomOutImage;
+            animation-name: zoomOutImage;
+  }
+  
+  
+  
+  @media (min-width: 992px) {
+    .hero_slider-main, .slide {
+      height: 80vh; 
+    }
+  }
+  .hero-slide_wrapper {
+    position: relative;
+  }
+  
+  .slide-background {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    cursor: pointer;
+    .background-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.575);
+    }
+    .background-video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  
+  .hero-slide_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    padding: 4em;
+    cursor: pointer;
+    .hero-news_wrapper {
+      position: relative;
+      top: 7em;
+      left: 7em;
+      text-align: left;
+      color: $bg-main;
+    }
+    .hero-news_heading {
+      width: 90%;
+      font-weight: 300;
+      font-size: 2.5em;
+      line-height: 1.25;
+      margin: .5em 0;
+      text-shadow: $text-shadow;
+      .heading-highlight {
+        font-weight: 700;
+      }
+  
+    }
+    .hero-news_description {
+      margin: 1em 0;
+      font-size: .9em;
+      font-weight: 300;
+  
+      line-height: 1.75;
+      text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+    }
+  }
+  
+  .hero-news_buttons {
+    margin: 3em 0;
+      button {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        padding: 1.25em 2em;
+        background: $bg-main;
+        a {
+          text-decoration: none;
+          color: $font-dark;
+        }
+        
+        font-weight: 800;
+        text-transform: uppercase;
+          
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 0.95);
+        &:hover, &:focus, &:active {
+          letter-spacing: 0.125em;
+        }
+      }
+      .trailer-button {
+        background-color: $font-light;
+        a {
+          color: $bg-main;
+        }
+      }
+  }
+  
+  
+  
+  
+  
+  
+  
+  #overlay {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background:rgba(0, 0, 0, 0.479);
+    color: black;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    display: none;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+  }
+  #mask{ /* create are mask */
+      position:fixed;
+      top:0;
+      //left:0;
+      background:rgba(0, 0, 0, 0.938);
+      z-index:500;
+      width:100%;
+      height:100%;
+      display:none;
+  }
+  #overlay:target, #overlay:target + #mask{
+      display:block;
+      opacity:1;
+  }
+  .close {
+      display:block;
+      position:absolute;
+      top: 3em;
+      right: 3em;
+      background:red;
+      color:white;
+      height:40px;
+      width:40px;
+      line-height:40px;
+      font-size:35px;
+      text-decoration:none;
+      text-align:center;
+      font-weight:bold;
+      -webkit-border-radius:40px;
+      -moz-border-radius:40px;
+      -o-border-radius:40px;
+      border-radius:40px;
+  }

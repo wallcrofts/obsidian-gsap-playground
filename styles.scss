@@ -3,20 +3,7 @@
 
 @import "scss/global";
 
-@import "scss/layout/intro";
-@import "scss/layout/games";
-@import "scss/layout/explore";
-@import "scss/layout/footer";
-
-.cover_outer-worlds {
-    background-image: url("img/game-cards/cards/outerworlds-hero.jpg");
-  }
-  .cover_pillars-of-eternity-deadfire {
-    background-image: url("img/game-cards/cards/poed-hero.jpg");
-  }
-  .cover_tyranny {
-    background-image: url("img/game-cards/cards/tyranny-hero.jpg");
-  }
-  .cover_pillars-of-eternity {
-    background-image: url("img/game-cards/cards/poe-hero.jpg");
-  }
+@import "scss/pages/intro";
+@import "scss/pages/explore";
+@import "scss/pages/games";
+@import "scss/pages/footer";

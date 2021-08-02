@@ -1,0 +1,181 @@
+.exlore-wrapper {
+    position: relative;
+    padding: 2em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: $bg-alt;
+}
+.explore_news-container {
+    margin: 0 3em;
+    width: 50%;
+}
+.explore_news-heading {
+    position: relative;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 2em 0;
+    .news-heading_subtitle {
+        color: $font-grey-light;
+        position: relative;
+        top: -.5em;
+        font-weight: 300;
+        margin-right: .25em;
+        font-size: 1.4em;
+        border-bottom: 5px solid $font-light-alt;
+    }
+    .news-heading_title {
+        color: $font-grey-dark;
+        font-size: 2.5em;
+        font-weight: 800;
+        display: inline;
+    }
+}
+.explore_news-article {
+    display: flex;
+    padding: 3em 0;
+}
+.article-line { 
+    height: 1px;
+    background: $font-dark;
+    opacity: .25;
+    //background: -webkit-gradient(linear, 0 0, 100% 0, from($bg-alt), to($bg-alt), color-stop(50%, $font-dark));
+}
+.news-article_image-container {
+    img {
+        width: 16em;
+        height: 12em;
+        object-fit: cover;
+    }
+}
+.news-article_text-container {
+    position: relative;
+    padding: 0 1em;
+    //text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.082);
+    .news-article_type { 
+        color: $font-light-alt;
+        font-size: .8em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+    .news-article_date {
+        margin: 0 .25em;
+        font-size: .75em;
+        letter-spacing: 1px;
+    }
+    .news-article_heading {
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        margin: .75em 0;
+        line-height: 1.35em;
+    }
+    .news-article_paragraph {
+        letter-spacing: 1px;
+        font-size: .8em;
+        line-height: 1.5em;
+    }
+    .news-article_link {
+        color: $font-grey-dark;
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-decoration: none;
+        position: absolute;
+        bottom: 2px;
+        &:hover {
+            color: $font-light;
+        }
+    }
+}
+.explore_view-more-link {
+    margin: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    span {
+        padding: .2em .75em;
+        border-left: 8px solid $font-light-alt;
+        display: block;
+        transition: all .4s;
+    }
+    .view-more-link_subtitle {
+        color: $font-grey-light;
+        font-size: 1em;
+        font-weight: 300;
+        padding-bottom: 0;
+        padding-left: 1.1em;
+    }
+    .view-more-link_title {
+        color: $font-grey-dark;
+        font-weight: 800;
+        font-size: 2em;
+        padding-left: .5em;
+        padding-bottom: 0;
+    }
+    &:hover {
+        span {
+            border-left: 8px solid $font-light;
+        }
+    }
+}
+.explore_jobs-container {
+    width: 50%;
+    position: sticky;
+    top: 0;
+    height: 100%;
+    margin: 0 3em;
+}
+.explore_jobs-heading {
+    position: relative;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 4.75em 0 2em;
+    .jobs-heading_subtitle {
+      color: $font-grey-light;
+      position: relative;
+      top: -.5em;
+      font-weight: 300;
+      margin-right: .25em;
+      font-size: 1.4em;
+      border-bottom: 5px solid $font-light-alt;
+    }
+    .jobs-heading_title {
+      color: $font-grey-dark;
+      font-size: 2.5em;
+      font-weight: 800;
+      display: inline;
+    }
+  
+}
+.job-listing-container {
+    display: flex;
+    .job-title {
+        font-weight: 500;
+        line-height: 1.25em;
+        color: $font-light-alt;
+        width: 30%;
+        margin-top: 1em;
+        text-decoration: none;
+        transition: all .2s;
+        &:hover {
+            color: $font-light;
+        }
+    }
+    .job-description {
+        font-size: .9em;
+        font-weight: 400;
+        line-height: 1.5em;
+        margin-left: 2em;
+        letter-spacing: .5px;
+        flex: 1;
+    }
+}
+@media only screen and (max-width: 1260px) {
+    .exlore-wrapper {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
